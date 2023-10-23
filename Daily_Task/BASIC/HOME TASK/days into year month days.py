@@ -1,0 +1,8 @@
+days=int(input("enter the days="))
+year=int(days/365)
+print("after converting days into year=",year)
+m=int(days%365)
+month=int(m/30)
+days=int(m%30)
+print("month=",month)
+print("days=",days)
