@@ -1,6 +1,6 @@
 # 20] Write a Python function that takes a list of words and returns the length of the longest one.
 list1=[]
-n=int(input("How many wword do you want to enter in list = "))
+n=int(input("How many word do you want to enter in list = "))
 for i in range(n):
       word=input("Enter the word = ")
       list1.append(word)
