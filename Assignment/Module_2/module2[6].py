@@ -4,6 +4,7 @@
 '''
 list1=['raj' , 'nikhiln' , 'purshottam' , 'smits']
 count=0
+#loop in list1
 for word in list1:
     if len(word) > 1 and word[0] == word[-1]:
         count+=1

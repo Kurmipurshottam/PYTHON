@@ -10,7 +10,7 @@ for i in range(n):
     no=int(input("enter element = "))
     li.append(no)
 print("main list : :",li)
-#main list divided using lisst length
+#main list divided using list length
 u1=int(len(li)/2)
 #main list is divided and some element append in user_list
 for i in range(u1):
