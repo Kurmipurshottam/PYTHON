@@ -1,8 +1,6 @@
 '''
 1] What is File function in python? What is keywords to create and write file.
--> n Python, there is no specific "File function." Instead, the term typically
-     refers to various functions and methods related to file manipulation and I/O
-     operations provided by the Python standard library.
+-> the file function is allows to make a file for write in a file or read from a file.
 -> The open() function is used to open and create the file and write() method
      used to write data in the file.
 '''

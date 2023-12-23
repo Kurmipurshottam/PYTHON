@@ -7,7 +7,7 @@ while True:
         if user_input % 2 != 1:
             print("You must enter an odd number.")
         else:
-            print(f"You entered an odd numberv= {user_input}")
+            print(f"You entered an odd number = {user_input}")
             break  # Break out of the loop if a valid odd number is entered   
     except ValueError :
         # Handle the ValueError (non-integer input)

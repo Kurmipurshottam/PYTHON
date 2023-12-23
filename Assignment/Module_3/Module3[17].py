@@ -1,13 +1,11 @@
 '''
 17] When is the finally block executed ?
- ->  The code inside the try block is executed. If an exception occurs during the execution
-       of the try block, the corresponding except block is executed to handle the exception.
-       Regardless of whether an exception occurs or not, the code inside the finally block is executed.
+ ->  The finally block is always executed even exception occurred or not. 
 '''
 try:
     # Attempt to get user input and perform a division
-    x = int(input("Enter x = "))  # Try to convert user input for x to an integer
-    y = int(input("Enter y = "))  # Try to convert user input for y to an integer
+    x = int(input("Enter x = "))  
+    y = int(input("Enter y = "))  
     result = x / y  # Attempting a division operation
     print("Try block: Division successful. Result =", result)
 except ZeroDivisionError:

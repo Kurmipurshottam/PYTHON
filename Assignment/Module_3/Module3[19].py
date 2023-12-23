@@ -1,13 +1,15 @@
 '''
 19] How Do You Handle Exceptions With Try/Except/Finally In Python ? Explain with coding snippets.
- ->  Handling exceptions in Python using try, except, and finally blocks allows you to gracefully
-       manage errors and ensure that necessary cleanup operations are performed. Here are coding
-       snippets to illustrate how to use try, except, and finally:
+ ->  Try: The try block test the code there are some error or not.
+ ->  Except: the except block is handel the error.You can have multiple except blocks to handle different
+                   types of exceptions.
+ ->  Finally: The finally block is always executed even exception occurred or not. 
 '''
 try:
     # Attempt to get user input and perform a division
-    x = int(input("Enter a number: "))  # Try to convert user input to an integer
-    result = 10 / x  # Attempting a division operation
+    x = int(input("Enter x = "))  
+    y = int(input("Enter y = "))  
+    result = x / y  # Attempting a division operation
     print("Division result:", result)
 except ZeroDivisionError:
     # Handling the specific exception when division by zero occurs

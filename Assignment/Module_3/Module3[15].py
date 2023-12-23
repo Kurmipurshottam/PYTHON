@@ -1,8 +1,6 @@
 '''
 15] When will the else part of try-except-else be executed ?
- ->  The code inside the try block is executed. If an exception occurs during the execution
-       of the try block, the corresponding except block is executed to handle the exception.
-       If no exception occurs, the else block is executed.
+ ->  The else block will executed when there are no error.
 '''
 #example :-
 try:
