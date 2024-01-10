@@ -27,6 +27,14 @@ def updateoperation():
     mydb.commit()
     print("successfully updated !!")
 
+def deleteoperation():
+    id=int(input("which student you want to delete enter id = "))
+    query="delete from student where id='%s'"
+    args=(id)
+    mycursor.execute(query % args)
+    mydb.commit()
+    print("successfully deleted !!")
+
 def searchoperation():
     name=input("enter your name = ")
     query="select * from student where name = '%s' "
@@ -47,6 +55,8 @@ while status:
         addoperation()
     elif choice == 2:
         updateoperation()
+    elif choice == 3:
+        deleteoperation()
     elif choice ==4:
         searchoperation()
     u_choice=input("do you want to perform more operation y for yes and n for no = ")

@@ -1,0 +1,1 @@
+{1: {'fname': 'kurmi ', 'lname': 'raj', 'contact': '8154968831', 'subject': {'java': {'mark': 34, 'fees': 10000}, 'python': {'mark': 99, 'fees': 15000}}}, 2: {'fname': 'kurmi', 'lname': 'purshottaam', 'contact': '7878511216', 'subject': {'HTML': {'mark': 99, 'fees': 9000}, 'CSS': {'mark': 98, 'fees': 10000}}}}

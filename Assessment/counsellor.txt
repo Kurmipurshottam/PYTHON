@@ -1,1 +1,0 @@
-{1: {'fname': 'qw', 'lname': 'as', 'contact': '1234', 'subject': {'xc': {'mark': 1, 'fees': 2}, 'df': {'mark': 2, 'fees': 3}}}, 2: {'fname': 'rt', 'lname': 'fg', 'contact': '4567', 'subject': {'nm': {'mark': 7, 'fees': 8}, 'op': {'mark': 5, 'fees': 6}}}}

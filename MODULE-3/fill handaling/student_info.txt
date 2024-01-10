@@ -1,3 +1,0 @@
-Name 1= raj , Id = 1
-Name 2= purshottam2 , Id = 2
-Name 3= nikhil , Id = 3
