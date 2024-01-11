@@ -76,3 +76,20 @@ def profile(request):
         return render(request,"myapp/profile.html",context)
     else:
         return HttpResponseRedirect(reverse("login"))
+
+def change_password(request):
+    if "email" in request.session:
+        uid=User.objects.get(email = request.session['email'])
+        cid=Chairman.objects.get(userid = uid)
+        currentpassword = request.POST['currentpassword']
+        newpassword = request.POST['newpassword']
+        if uid.password == currentpassword:
+            uid.password = newpassword
+            uid.save() #update
+            del request.session['email']
+            s_msg="Password changed succesfully"
+            return render(request,"myapp/login.html",{'s_msg':s_msg})   
+        else:
+            e_msg="Invalid current password"
+            del request.session['email']
+            return render(request,"myapp/login.html",{'e_msg':e_msg})

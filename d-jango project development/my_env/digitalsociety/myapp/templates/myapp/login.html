@@ -52,8 +52,13 @@
                         </div>
                         <h5>Log in</h5>
                         {% if e_msg %}
-                            <div class="alert alert-primary" role="alert">
-                                {{e_msg}}
+                        <div class="alert alert-danger" role="alert">
+                            {{e_msg}}
+                        </div>
+                        {% endif %}
+                        {% if s_msg %}
+                            <div class="alert alert-success" role="alert">
+                                {{s_msg}}
                             </div>
                         {% endif %}
                     </div>
