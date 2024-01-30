@@ -64,7 +64,7 @@ while True:
                 s_status = True
     else:
         # Exiting the main loop if the user chooses to exit
-        break
+        exit()
         # counsellor.exit_function()
 
                      

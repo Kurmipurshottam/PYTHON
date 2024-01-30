@@ -51,12 +51,9 @@ def retrive_data():
         e_email.delete(0,'end')
         row=cursor.fetchall()
         print(row)
-        e_name.insert(0,row[0][1])
-        e_age.insert(0,row[0][2])
-        e_email.insert(0,row[0][4])
         conn.commit()
         conn.close()
-        msg.showinfo("Insert Status","Data Entered successfully")
+        msg.showinfo("Insert Status","Data Fatch successfully")
 
 
 #=================Labels======================
@@ -107,3 +104,4 @@ update.place(x=250,y=330)
 
 delete=Button(root, text="DELETE", font=('Arial 12'))
 delete.place(x=350,y=330)
+root.mainloop()

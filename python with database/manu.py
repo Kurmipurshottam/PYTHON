@@ -1,5 +1,5 @@
 import pymysql
-mydb = pymysql.connect(host="localhost",user="root",password="",database="tops_python")
+mydb = pymysql.connect(host="localhost",user="root",password="",database="python")
 mycursor=mydb.cursor()
 menu="""
 
@@ -7,6 +7,7 @@ menu="""
     press 2 for update student
     press 3 for delete student
     press 4 for search student
+    press 5 for search all student
     """
 def addoperation():
     name=input("enter name = ")
@@ -47,6 +48,14 @@ def searchoperation():
     mydb.commit()
     print("successfully serched !!")
 
+def searchalloperation():
+    query="select * from student "
+    mycursor.execute(query)
+    res=mycursor.fetchall()
+    print(res)
+    mydb.commit()
+    print("successfully serched !!")
+
 status=True
 while status:
     print(menu)
@@ -59,6 +68,8 @@ while status:
         deleteoperation()
     elif choice ==4:
         searchoperation()
+    elif choice ==5:
+        searchalloperation()
     u_choice=input("do you want to perform more operation y for yes and n for no = ")
     if u_choice == 'y':
         status=True
