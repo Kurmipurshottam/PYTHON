@@ -18,7 +18,7 @@ def connection():
         user='root',
         host="localhost",
         password='',
-        database="college_data",
+        database="collage",
         )
 #=========================save button========================
 def save_data():
@@ -27,7 +27,7 @@ def save_data():
     else:
         conn=connection()
         cursor=conn.cursor()
-        query="insert into student_info(name,age,gender,email) values(%s,%s,%s,%s)"
+        query="insert into student(name,age,gender,email) values(%s,%s,%s,%s)"
         args=(e_name.get(),e_age.get(),var.get(),e_email.get())
         cursor.execute(query,args)
         conn.commit()
@@ -43,7 +43,7 @@ def retrive_data():
     else:
         conn=connection()
         cursor=conn.cursor()
-        query="select * from student_info where email=%s"
+        query="select * from student where email=%s"
         args=(e_email.get(),)
         cursor.execute(query,args)
         e_name.delete(0,'end')
@@ -84,7 +84,7 @@ e_age.place(x=200,y=150)
 e_male=Radiobutton(root,text="male",variable=var,value="male")
 e_male.place(x=200,y=200)
 
-e_female=Radiobutton(root,text="female",variable=var,value="female")
+e_female=Radiobutton(root,text="female",variable=var,value="femsdale")
 e_female.place(x=250,y=200)
 
 e_email=Entry(root,)

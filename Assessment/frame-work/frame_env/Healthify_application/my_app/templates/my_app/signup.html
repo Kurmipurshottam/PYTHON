@@ -51,9 +51,22 @@
                     </div>
                     <h5>Sign Up</h5>
                 </div>
-                <div class="content">                                                
+                <div class="content">      
                     <div class="input-group">
-                        <input type="text" class="form-control" name="name" placeholder="Enter User Name">
+                        <select name="role" class="form-control" style="color: black; background: rgb(81, 248, 248);" style="width: 29.5rem; height: 3rem;">
+                            <option value="select_role" name="role" selected disabled>Select Role</option>
+                            <option value="doctor" name="role">D o c t o r</option>
+                            <option value="patient" name="role">P a t i e n t</option>
+                        </select>
+                    </div>                                          
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="first_name" placeholder="Enter First Name">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-account-circle"></i>
+                        </span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name">
                         <span class="input-group-addon">
                             <i class="zmdi zmdi-account-circle"></i>
                         </span>
@@ -65,14 +78,26 @@
                         </span>
                     </div>
                     <div class="input-group">
+                        <input type="text" class="form-control" name="contact" placeholder="Enter Contact Number">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-phone"></i>
+                        </span>
+                    </div>
+                    <div class="input-group">
                         <input type="password" name="password" placeholder="Password" class="form-control">
                         <span class="input-group-addon">
                             <i class="zmdi zmdi-lock"></i>
                         </span>
-                    </div>                        
+                    </div>     
+                    <div class="input-group">
+                        <input type="password" name="confirm_password" placeholder="Confirm Password" class="form-control">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-lock"></i>
+                        </span>
+                    </div>                     
                 </div>
                 <div class="footer text-center">
-                    <a href="..\dashboard\index.html" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">SIGN UP</a>
+                    <a href="{% url 'index' %}" class="btn btn-primary btn-round btn-lg btn-block waves-effect waves-light">SIGN UP</a>
                     <h5><a class="link" href="{% url 'login' %}">Already have an account?</a></h5>
                 </div>
             </form>
@@ -96,8 +121,8 @@
         </div>
 
         <!-- Scripts -->
-                <script src="..\assets\bundles\libscripts.bundle.js"></script>    
-        <script src="..\assets\bundles\vendorscripts.bundle.js"></script>
+        <script src="{% static 'my_app\assets\bundles\libscripts.bundle.js' %}"></script>    
+        <script src="{% static 'my_app\assets\bundles\vendorscripts.bundle.js' %}"></script>
                 
     </body>
 </html>
