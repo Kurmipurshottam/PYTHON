@@ -19,22 +19,44 @@ def addoperation():
     print("successfully added !!")
 
 def updateoperation():
-    id=int(input("which student you want to update enter id = "))
-    name=input("enter update name = ")
-    subject=input("enter update subject = ")
-    query="update student set name='%s',subject='%s'where id=%s"
-    args=(name,subject,id)
-    mycursor.execute(query % args)
-    mydb.commit()
-    print("successfully updated !!")
+    try:
+        id = int(input("Enter ID to update: "))
+        # Check if the ID exists in the database
+        query = "SELECT * FROM student WHERE id = %s"
+        mycursor.execute(query%id)
+        data = mycursor.fetchone()
+        if not data:
+            print("No student found with the given ID. Please try again.")
+            return
+
+        name=input("enter update name = ")
+        subject=input("enter update subject = ")
+        query="update student set name='%s',subject='%s'where id=%s"
+        args=(name,subject,id)
+        mycursor.execute(query % args)
+        mydb.commit()
+        print("Successfully updated!")
+    except:
+        print("Invalid input. Please enter a valid ID.")
 
 def deleteoperation():
-    id=int(input("which student you want to delete enter id = "))
-    query="delete from student where id='%s'"
-    args=(id)
-    mycursor.execute(query % args)
-    mydb.commit()
-    print("successfully deleted !!")
+    try:
+        id=int(input("which student you want to delete enter id = "))
+        query = "SELECT * FROM student WHERE id = %s"
+        args=(id)
+        mycursor.execute(query%args)
+        data=mycursor.fetchone()
+        if not data:
+                print("No student found with the given ID. Please try again.")
+                return
+        query="delete from student where id='%s'"
+        args=(id)
+        mycursor.execute(query % args)
+        mydb.commit()
+        print("successfully deleted !!")
+    except:
+        print("Invalid input. Please enter a valid ID.")
+
 
 def searchoperation():
     name=input("enter your name = ")
@@ -42,17 +64,20 @@ def searchoperation():
     args=(name)
     mycursor.execute(query%args)
     res=mycursor.fetchone()
-    print(res[0])
-    print(res[1])
-    print(res[2])
+    if res:
+        print(f"ID: {res[0]}, Name: {res[1]}, City: {res[2]}")
+    else:
+        print("No student found with the given ID.")
     mydb.commit()
     print("successfully serched !!")
+
 
 def searchalloperation():
     query="select * from student "
     mycursor.execute(query)
     res=mycursor.fetchall()
-    print(res)
+    for row in res:
+        print(f"ID: {row[0]}, Name: {row[1]}, City: {row[2]}")
     mydb.commit()
     print("successfully serched !!")
 
